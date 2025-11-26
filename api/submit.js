@@ -5,23 +5,21 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Only POST allowed" });
   }
 
-  console.log("REQ BODY →", req.body);
-
   const { name, email } = req.body;
 
   try {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.9198951281shubham@gmail.com,
-        pass: process.env.fryy sjdz jvev qfre
+        user: process.env.MY_MAIL,   // Gmail
+        pass: process.env.MY_PASS    // App Password
       }
     });
 
     await transporter.sendMail({
       from: process.env.MY_MAIL,
-      replyTo: email,
       to: process.env.MY_MAIL,
+      replyTo: email,
       subject: "New Form Submission",
       text: `Name: ${name}\nEmail: ${email}`
     });
