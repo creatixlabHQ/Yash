@@ -1,13 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Yash Website</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yash FormSubmit</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Welcome to Yash Website</h1>
-    <p>Deployed via Vercel</p>
+  <canvas id="bg"></canvas>
+  <div class="container">
+    <h1 class="glow-text">Yash <span>FormSubmit</span></h1>
+    <p class="tagline">Free & Fast Form Submission Platform</p>
 
-    <script src="script.js"></script>
+    <form id="contactForm" method="POST" action="https://yash-wine.vercel.app/api/submit?to=YOUR_EMAIL@gmail.com">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message 🚀</button>
+    </form>
+
+    <footer>
+      <p>Created by <strong>Shubham</strong> ✨</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
