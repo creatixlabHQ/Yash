@@ -1,29 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yash FormSubmit</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>YashSubmit</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="bg"></canvas>
-  <div class="container">
-    <h1 class="glow-text">Yash <span>FormSubmit</span></h1>
-    <p class="tagline">Free & Fast Form Submission Platform</p>
 
-    <form id="contactForm" method="POST" action="https://yash-wine.vercel.app/api/submit?to=YOUR_EMAIL@gmail.com">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message 🚀</button>
-    </form>
+<div class="card">
+  <h1>YashSubmit</h1>
+  <p>Copy & paste this in your form 👇</p>
 
-    <footer>
-      <p>Created by <strong>Shubham</strong> ✨</p>
-    </footer>
-  </div>
+  <textarea id="code" readonly>
+<form action="https://yash-wine.vercel.app/api/submit" method="POST">
+  <input type="text" name="name" required>
+  <input type="email" name="email" required>
+  <button type="submit">Send</button>
+</form>
+  </textarea>
 
-  <script src="script.js"></script>
+  <button onclick="copyCode()">Copy Code</button>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
