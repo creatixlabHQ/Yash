@@ -1,93 +1,56 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
 body {
-  height: 100vh;
-  background: radial-gradient(circle at top, #020202, #000);
-  color: #fff;
-  overflow: hidden;
-}
-
-canvas#bg {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-.container {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  text-align: center;
-}
-
-.glow-text {
-  font-size: 3em;
-  color: #0ff;
-  text-shadow: 0 0 20px #0ff, 0 0 40px #0ff;
-  animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-  from { text-shadow: 0 0 10px #0ff; }
-  to { text-shadow: 0 0 30px #00faff; }
-}
-
-.tagline {
-  margin-bottom: 25px;
-  color: #aaa;
-  font-size: 1.2em;
-}
-
-form {
-  background: rgba(255,255,255,0.1);
-  padding: 25px 30px;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(0,255,255,0.3);
-  width: 320px;
-  display: flex;
-  flex-direction: column;
-}
-
-input, textarea {
-  margin: 10px 0;
-  padding: 10px;
-  border: none;
-  outline: none;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.2);
+  background: radial-gradient(circle at top, #000428, #004e92);
   color: white;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  padding: 30px;
+  border-radius: 20px;
+  width: 400px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 60px rgba(0,0,0,0.7);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
+h1 {
+  text-align: center;
+  color: #38bdf8;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  background: black;
+  color: #00f7ff;
+  border-radius: 10px;
+  padding: 12px;
+  border: none;
 }
 
 button {
-  margin-top: 10px;
-  padding: 10px;
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 50px;
   border: none;
-  border-radius: 8px;
-  background: linear-gradient(90deg, #00e5ff, #00ff99);
-  color: black;
-  font-weight: bold;
+  background: linear-gradient(45deg, #00f7ff, #3b82f6);
   cursor: pointer;
-  transition: 0.3s;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
-
 button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px #00e5ff;
-}
-
-footer {
-  margin-top: 20px;
-  color: #888;
+  transform: scale(1.05);
 }
