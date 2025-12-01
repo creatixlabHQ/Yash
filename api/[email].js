@@ -6,18 +6,16 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Only POST allowed" });
   }
 
-  // dynamic email from URL
-  const { email } = req.query;
+  console.log("BODY →", req.body);
 
+  const { email } = req.query;
   const { name, senderEmail, message } = req.body;
 
-  // Validation
   if (!name || !senderEmail || !message) {
     return res.status(400).json({ error: "Required fields missing" });
   }
 
   try {
-
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -26,14 +24,12 @@ export default async function handler(req, res) {
       }
     });
 
-    const mailOptions = {
+    await transporter.sendMail({
       from: senderEmail,
       to: email,
       subject: `Message from ${name}`,
       text: message
-    };
-
-    await transporter.sendMail(mailOptions);
+    });
 
     return res.status(200).json({ success: "Email sent successfully ✅" });
 
