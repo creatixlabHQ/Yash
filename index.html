@@ -1,27 +1,151 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>YashSubmit</title>
+  <meta charset="UTF-8">
+  <title>SubmitX – Form Backend for Developers</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
 
-<div class="card">
-  <h1>YashSubmit</h1>
-  <p>Copy & paste this in your form 👇</p>
+<!-- BACKGROUND -->
+<div class="bg-gradient"></div>
+<div class="particles"></div>
 
-  <textarea id="code" readonly>
-<form action="https://yash-wine.vercel.app/api/submit" method="POST">
-  <input type="text" name="name" required>
-  <input type="email" name="email" required>
-  <button type="submit">Send</button>
-</form>
-  </textarea>
+<!-- NAVBAR -->
+<header>
+  <h2>SubmitX</h2>
+  <nav>
+    <a href="#how">How it works</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Turn HTML forms into Emails</h1>
+  <p>No backend. No database. No headache.</p>
+  <button onclick="scrollToSection('code')">
+    Get Started Free
+  </button>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div><span id="forms">0</span>+ Forms</div>
+  <div><span id="users">0</span>+ Users</div>
+  <div><span id="emails">0</span>+ Emails</div>
+</section>
+
+<!-- ABOUT -->
+<section class="info">
+  <h2>What is SubmitX?</h2>
+  <p>
+    SubmitX lets you connect any HTML form to your email address using one simple API endpoint.
+    No signup, no dashboard, no setup — just copy & paste.
+  </p>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="steps" id="how">
+  <h2>How it works</h2>
+
+  <div class="step-box">
+    <div class="step">1</div>
+    <p>Create form in HTML</p>
+  </div>
+
+  <div class="step-box">
+    <div class="step">2</div>
+    <p>Add SubmitX URL</p>
+  </div>
+
+  <div class="step-box">
+    <div class="step">3</div>
+    <p>Get email instantly</p>
+  </div>
+</section>
+
+<!-- CODE SECTION -->
+<section class="code-section" id="code">
+  <h2>Copy & Use</h2>
 
   <button onclick="copyCode()">Copy Code</button>
 
-</div>
+<pre id="codeBox">
+&lt;form action="https://yash-wine.vercel.app/api/YOUR_EMAIL" method="POST"&gt;
+  &lt;input name="name" placeholder="Your Name"&gt;
+  &lt;input name="email" placeholder="Your Email"&gt;
+  &lt;textarea name="message" placeholder="Message"&gt;&lt;/textarea&gt;
+  &lt;button type="submit"&gt;Send&lt;/button&gt;
+&lt;/form&gt;
+</pre>
 
-<script src="script.js"></script>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <h2>Features</h2>
+
+  <div class="feature-grid">
+    <div class="feature-card">🚀 Unlimited Forms</div>
+    <div class="feature-card">📧 Send to any Email</div>
+    <div class="feature-card">🔐 Secure Endpoint</div>
+    <div class="feature-card">⚡ Fast Delivery</div>
+    <div class="feature-card">🚫 No Signup</div>
+    <div class="feature-card">📊 Future Analytics</div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <h2>Simple Pricing</h2>
+
+  <div class="pricing-grid">
+
+    <div class="plan">
+      <h3>FREE</h3>
+      <p class="price">₹0</p>
+      <p>Unlimited Forms</p>
+      <p>Email Only</p>
+      <p>No Limit</p>
+      <button>Default</button>
+    </div>
+
+    <div class="plan popular">
+      <h3>PRO</h3>
+      <p class="price">₹199/mo</p>
+      <p>Dashboard</p>
+      <p>Storage</p>
+      <p>Spam Filter</p>
+      <button>Coming Soon</button>
+    </div>
+
+    <div class="plan">
+      <h3>BUSINESS</h3>
+      <p class="price">₹499/mo</p>
+      <p>Team Access</p>
+      <p>Webhook</p>
+      <p>Custom Domain</p>
+      <button>Coming Soon</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- USERS -->
+<section class="testimonials">
+  <h2>Loved by creators</h2>
+
+  <div class="user">“This is insane. I stopped using Formspree.”</div>
+  <div class="user">“SubmitX = simple + powerful.”</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  Built by <b>Shubham</b> – SubmitX © 2025
+</footer>
+
 </body>
-</html>
+        </html>
