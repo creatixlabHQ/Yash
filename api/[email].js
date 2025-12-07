@@ -8,8 +8,8 @@ export default async function handler(req, res) {
 
   console.log("BODY →", req.body);
 
-  const { email } = req.query;
-  const { name, senderEmail, message } = req.body;
+  const { email } = req.query;            // receiver email (URL wala)
+  const { name, email: senderEmail, message } = req.body;  // form wala email
 
   if (!name || !senderEmail || !message) {
     return res.status(400).json({ error: "Required fields missing" });
@@ -25,15 +25,21 @@ export default async function handler(req, res) {
     });
 
     await transporter.sendMail({
-      from: senderEmail,
+      from: `"Yash Forms" <${process.env.MY_MAIL}>`,
+      replyTo: senderEmail,
       to: email,
       subject: `Message from ${name}`,
-      text: message
+      text: `
+Name: ${name}
+Email: ${senderEmail}
+Message: ${message}
+      `
     });
 
     return res.status(200).json({ success: "Email sent successfully ✅" });
 
   } catch (err) {
-    return res.status(500).json({ error: err.message });
+    console.error("MAIL ERROR →", err);
+    return res.status(500).json({ error: "Mail sending failed ❌" });
   }
 }
